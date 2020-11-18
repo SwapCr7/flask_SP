@@ -1,0 +1,17 @@
+{% block content %}
+<a href="{{url_for('logout')}}">Logout</a>
+<div class="container">
+  <a href="{{url_for('homepage')}}">Back</a>
+</div>
+
+    <div class="container">
+      <h1>Results</h1>
+    </div>
+    {% for res in result %}
+      <h4>Username : {{res[0]}}</h4>
+      <h4>Date : {{res[1]}}</h4>
+      <h4>Time : {{res[2]}}</h4>
+      <h4>File : {{res[3]}}</h4>
+    {% endfor %}
+
+{% endblock %}

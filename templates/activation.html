@@ -1,0 +1,16 @@
+{% block content %}
+<a href="{{url_for('logout')}}">Logout</a>
+<div class="container">
+  <a href="{{url_for('homepage')}}">Back</a>
+</div>
+    <div class="container">
+      <h1>Users Information</h1>
+    </div>
+  <form action="/active" method="post">
+      {% for res in result %}
+             <input type="radio" name="user" value = "{{res[1]}}" >{{res[1]}}<br>
+        {% endfor %}
+        <input type="submit">
+  </form>
+
+{% endblock %}

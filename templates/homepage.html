@@ -1,0 +1,27 @@
+{% block content %}
+<a href="{{url_for('logout')}}">Logout</a>
+    <div class="container">
+    </div>
+    <div class="container">
+      {% if role == 'admin' %}
+        <h1>Hello {{role}}</h1>
+        <a href="{{url_for('activation')}}">Active inactive Users</a> 
+      {% endif %}
+      <h1>Welcome {{username}}</h1>
+    </div>
+      <h2>Upload</h2>
+      <form class="" action="{{url_for('upload_file')}}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="upload_document">Add Document</label>
+          <input type="file" name="addfile">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+      <div class="container">
+        <a href="{{url_for('view')}}">View all Contents</a>
+      </div>
+      <div class="container">
+        <a href="{{url_for('view_specific')}}">View your Contents</a>
+      </div>
+
+{% endblock %}
